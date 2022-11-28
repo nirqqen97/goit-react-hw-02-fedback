@@ -1,10 +1,7 @@
-import {Widget} from "./widget/widget";
-
+import {Section} from "./widget/widget";
 
 export const App = () => {
   return (
-    <div>
-    <Widget></Widget>
-    </div>
+    <Section title = {"Please leave feedback"}/>
   );
 };

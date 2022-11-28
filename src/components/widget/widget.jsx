@@ -1,9 +1,9 @@
 import React from "react";
-import {Container, FeedbackBtn,Title,StatisticTitle,Stats} from "./widget.styled";
+import {Container,Title} from "./widget.styled";
 import {Statistic} from "../statistic/statistic";
 import {FeedbackOptions} from "../FeedbackBtn/FeedbackBtn";
 
-export class Widget extends React.Component { 
+export class Section extends React.Component { 
     state = {
         good: 0,
         neutral: 0,
@@ -37,6 +37,7 @@ export class Widget extends React.Component {
     render() {
         return(
           <Container>
+              <Title>{this.props.title}</Title>
                     <FeedbackOptions handleIncrement = {this.handleIncrement}
                                      handleNeutral= {this.handleNeutral}
                                      handleDicrement = {this.handleDicrement}/>
@@ -46,31 +47,10 @@ export class Widget extends React.Component {
                       bad={this.state.bad} 
                       total={this.countTotalFeedback()}/>
                  )} 
-
+    
            </Container>
         )
 
     }
 }
 
-
-
-// render() {
-//     return(
-//       <Container>
-//           <Title>Please leave feedback</Title>
-//             <FeedbackBtn onClick={this.handleIncrement}>Good</FeedbackBtn>
-//             <FeedbackBtn onClick={this.handleNeutral}>Neutral</FeedbackBtn>
-//             <FeedbackBtn onClick={this.handleDicrement}>Bad</FeedbackBtn>
-//                 <StatisticTitle>Statistic</StatisticTitle>
-//                     <Stats>Good:{this.state.good}</Stats>
-//                     <Stats>Neutral:{this.state.neutral}</Stats>
-//                     <Stats>Bad:{this.state.bad}</Stats>
-//                     <Stats>Total:{this.countTotalFeedback()}</Stats>
-//                     <Stats>Positive feedback:{this.countPositiveFeedbackPercentage()}%</Stats>
-
-//        </Container>
-//     )
-
-// }
-// }
