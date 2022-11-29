@@ -1,4 +1,4 @@
-import {FeedbackBtn} from './FeedbackBtn.styled';
+import {FeedbackBtn} from './FeedbackOptions.styled';
 
 export const FeedbackOptions = ({handleIncrement,handleNeutral,handleDicrement}) =>{
     return <div>

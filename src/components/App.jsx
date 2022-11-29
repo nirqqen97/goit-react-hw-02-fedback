@@ -1,4 +1,4 @@
-import {Section} from "./widget/widget";
+import {Section} from "./Section/Section";
 
 export const App = () => {
   return (

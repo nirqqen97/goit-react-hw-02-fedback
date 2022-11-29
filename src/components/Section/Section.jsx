@@ -1,7 +1,9 @@
 import React from "react";
-import {Container,Title} from "./widget.styled";
+import {Container,Title} from "./Section.styled";
 import {Statistic} from "../statistic/statistic";
-import {FeedbackOptions} from "../FeedbackBtn/FeedbackBtn";
+import {FeedbackOptions} from "../FeedbackOptions/FeedbackOptions";
+import {Notification} from "../Notification/Notification";
+
 
 export class Section extends React.Component { 
     state = {
@@ -41,16 +43,17 @@ export class Section extends React.Component {
                     <FeedbackOptions handleIncrement = {this.handleIncrement}
                                      handleNeutral= {this.handleNeutral}
                                      handleDicrement = {this.handleDicrement}/>
-                 {this.countTotalFeedback() > 0 &&(
+                 {this.countTotalFeedback() > 0 ? (
                       <Statistic good={this.state.good}
                       neutral={this.state.neutral} 
                       bad={this.state.bad} 
                       total={this.countTotalFeedback()}/>
-                 )} 
-    
+                 ) : (<Notification message={"There is no feedback"}/>)
+                } 
+                 
+                 
            </Container>
         )
 
     }
 }
-
