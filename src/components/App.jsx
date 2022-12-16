@@ -9,13 +9,14 @@ export class App extends Component {
     neutral: 0,
     bad: 0,
 }
-handleFeedback = (option) => {
+onLeaveFeedback = (option) => {
   this.setState(prevState => {
     return {
       [option]: prevState[option] + 1
     }
   });
 }
+
  countPositiveFeedbackPercentage = (good,total) => {
   return Math.round(good/total * 100);
   
@@ -27,10 +28,11 @@ countTotalFeedback = () => {
 
 
   render(){
+    const options = Object.keys(this.state);
   return (
    <>
    <Section title = {"Please leave Feedback"}>
-   <FeedbackOptions options={Object.keys(this.state)} onLeaveFeedback={this.handleFeedback}/>
+   <FeedbackOptions onLeaveFeedback={this.onLeaveFeedback} option={options}/> 
     </Section>
     {this.countTotalFeedback() > 0 ? (
       <Section title = {"Statistic"}><Statistic good={this.state.good}
