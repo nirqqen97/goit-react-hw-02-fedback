@@ -1,10 +1,8 @@
-import {StatisticTitle,Stats} from "./statistic.styled";
-import {countPositiveFeedbackPercentage} from "../countPositiveFeedbackPercentage";
-
-export const Statistic = ({good,neutral,bad,total}) =>{
+import PropTypes from "prop-types";
+import {Stats} from "./Statisctic.styled";
+export const Statistic = ({good,neutral,bad,total,countPositiveFeedbackPercentage}) =>{
     return (
         <div>
-        <StatisticTitle>Statistic</StatisticTitle>
             <Stats>Good:{good}</Stats>
             <Stats>Neutral:{neutral}</Stats>
             <Stats>Bad:{bad}</Stats>
@@ -13,6 +11,9 @@ export const Statistic = ({good,neutral,bad,total}) =>{
         </div>
     )
 }
-
-
+Statistic.propTypes ={
+    good: PropTypes.number,
+    neutral: PropTypes.number,
+    bad: PropTypes.number,
+}
  
