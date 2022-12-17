@@ -1,13 +1,13 @@
 import PropTypes from "prop-types";
 import {Stats} from "./Statisctic.styled";
-export const Statistic = ({good,neutral,bad,total,countPositiveFeedbackPercentage}) =>{
+export const Statistic = ({good,neutral,bad,total,positivePercentage}) =>{
     return (
         <div>
             <Stats>Good:{good}</Stats>
             <Stats>Neutral:{neutral}</Stats>
             <Stats>Bad:{bad}</Stats>
             <Stats>Total:{total}</Stats>
-            <Stats>Positive feedback:%{countPositiveFeedbackPercentage(good,total)}</Stats>
+            <Stats>Positive feedback:%{positivePercentage(good,total)}</Stats>
         </div>
     )
 }

@@ -1,5 +1,5 @@
 import {FeedbackBtn} from './FeedbackOptions.styled';
-
+import PropTypes from "prop-types";
 export const FeedbackOptions = ({onLeaveFeedback, option}) => {
   return (
     <div>
@@ -8,4 +8,9 @@ export const FeedbackOptions = ({onLeaveFeedback, option}) => {
       ))}
     </div>
   );
+}
+
+FeedbackOptions.propTypes = {
+    onLeaveFeedback: PropTypes.func.isRequired,
+    option:  PropTypes.array.isRequired
 }

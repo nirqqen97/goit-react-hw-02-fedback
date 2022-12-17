@@ -12,7 +12,7 @@ export class App extends Component {
 onLeaveFeedback = (option) => {
   this.setState(prevState => {
     return {
-      [option]: prevState[option] + 1
+      [option]: prevState[option] + 1 
     }
   });
 }
@@ -35,11 +35,12 @@ countTotalFeedback = () => {
    <FeedbackOptions onLeaveFeedback={this.onLeaveFeedback} option={options}/> 
     </Section>
     {this.countTotalFeedback() > 0 ? (
-      <Section title = {"Statistic"}><Statistic good={this.state.good}
+      <Section title = {"Statistic"}>
+        <Statistic good={this.state.good}
       neutral={this.state.neutral} 
       bad={this.state.bad} 
       total={this.countTotalFeedback()}
-      countPositiveFeedbackPercentage = {this.countPositiveFeedbackPercentage}/></Section>
+      positivePercentage = {this.countPositiveFeedbackPercentage}/></Section>
  ) : (<Notification message={"There is no feedback"}/>)
 } 
 </>
